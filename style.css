@@ -1,4 +1,24 @@
 <link rel="stylesheet" type="text/css" href="style.css">
+#ageCategory {
+    padding: 10px 15px; /* Увеличивает размер и добавляет отступы */
+    font-size: 16px; /* Увеличивает размер шрифта */
+    border-radius: 5px; /* Делает углы закругленными */
+    border: 1px solid #ddd; /* Добавляет тонкую границу */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Добавляет тень для более глубокого визуального эффекта */
+    cursor: pointer; /* Изменяет курсор, чтобы указать на возможность выбора */
+}
+
+/* Стиль для наведения мыши на элемент select */
+#ageCategory:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Стиль для фокуса на элемент select (например, при выборе с клавиатуры) */
+#ageCategory:focus {
+    border-color: #0056b3;
+    box-shadow: 0 0 8px rgba(0, 86, 179, 0.5);
+}
+
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
