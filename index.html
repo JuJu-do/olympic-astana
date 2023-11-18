@@ -6,6 +6,57 @@
 <body>
   <h1>Добро пожаловать в Спортивную Школу Olympic!</h1>
   <p>Тестироване Олимпик 20-21 октября 2023 года</p>
+  <!-- Раскрывающийся список для выбора возрастной категории -->
+<select id="ageCategoryDropdown">
+    <option value="">Выберите возрастную категорию</option>
+    <option value="category1">4-7 лет</option>
+    <option value="category2">8-10 лет</option>
+    <option value="category2">11-13 лет</option>
+    <option value="category2">14-15 лет</option>
+    <!-- Добавьте другие категории по необходимости -->
+</select>
+
+<!-- Раскрывающийся список для выбора буквы, изначально скрыт -->
+<select id="alphabetDropdown" style="display: none;">
+    <option value="">Выберите букву</option>
+    <option value="A">A</option>
+    <option value="B">Б</option>
+    <option value="B">В</option>
+    <option value="B">Г</option>
+    <option value="B">Д</option>
+    <!-- Добавьте другие буквы алфавита -->
+</select>
+
+<!-- Блок для отображения контента -->
+<div id="content"></div>
+  <script>
+document.getElementById('ageCategoryDropdown').addEventListener('change', function() {
+    var selectedCategory = this.value;
+    var alphabetDropdown = document.getElementById('alphabetDropdown');
+
+    if (selectedCategory) {
+        alphabetDropdown.style.display = 'block'; // Показать второй список
+    } else {
+        alphabetDropdown.style.display = 'none'; // Скрыть второй список
+    }
+
+    alphabetDropdown.value = ''; // Сбросить выбор второго списка
+    document.getElementById('content').innerHTML = ''; // Очистить контент
+});
+
+document.getElementById('alphabetDropdown').addEventListener('change', function() {
+    var selectedLetter = this.value;
+    var contentDiv = document.getElementById('content');
+
+    if (selectedLetter) {
+        // Здесь добавьте логику для отображения контента, соответствующего выбранной букве и возрастной категории
+        contentDiv.innerHTML = 'Контент для категории и буквы: ' + selectedLetter;
+    } else {
+        contentDiv.innerHTML = ''; // Очистить контент, если буква не выбрана
+    }
+});
+</script>
+  
   <table>
     <tr>
         <p>Тестирование 4-7 лет</p>
