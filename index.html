@@ -6,23 +6,41 @@
 </head>
 <body>
     <div class="container">
-        <h1>Нормативы физических тестов для спортстменов от 4 до 15 лет</h1>
+        <h1>Нормативы Физических Тестов для Детей</h1>
 
-<section class="age-group">
+        <!-- Вставляем раскрывающийся список здесь -->
+        <div class="age-selection">
+            <h3>Выберите возрастную категорию вашего ребенка:</h3>
+            <select id="ageCategory">
+                <option value="">-- Возраст --</option>
+                <option value="4-7">4-7 лет</option>
+                <option value="8-10">8-10 лет</option>
+                <!-- Повторите для других возрастных групп -->
+            </select>
+        </div>
+<section class="age-group-info 4-7" style="display: none;">
+    <h2>4-7 лет</h2>
+    <section class="age-group">
     <h2>4-7 лет</h2>
     <p><strong>Бег 30 метров:</strong> 4-5 лет: около 6-8 секунд. 6-7 лет: около 5-7 секунд.</p>
     <p><strong>Прыжок в длину:</strong> 4-5 лет: около 50-70 см. 6-7 лет: около 70-90 см.</p>
     <p><strong>Планка (удержание планки в секундах):</strong> Хорошим результатом для детей 4-7 лет считается удержание планки от 20 секунд и более.</p>
 </section>
+</section>
 
-<section class="age-group">
+ <section class="age-group-info 8-10" style="display: none;">
+    <h2>8-10 лет</h2>
+    <section class="age-group">
     <h2>8-10 лет</h2>
     <p><strong>Бег на 30 метров (секунды):</strong> Нормальное время для бега на 30 метров: 8-9 лет: около 5-7 секунд. 10 лет: около 5-6 секунд.</p>
     <p><strong>Прыжок в длину (см):</strong> Хорошим результатом для прыжка в длину у детей 8-10 лет: 8-9 лет: около 100-120 см. 10 лет: около 110-130 см.</p>
     <p><strong>Пресс (удержание в планке 30 секунд):</strong> Удержание планки в течение 30 секунд считается хорошим результатом для детей данного возраста.</p>
     <p><strong>Челнок (3*10 метров):</strong> Тест на координацию и скорость. Хорошим показателем может быть выполнение теста за приемлемое время.</p>
 </section>
+</section>
 
+<section class="age-group-info 11-13" style="display: none;">
+    <h2>11-13 лет</h2>
 <section class="age-group">
     <h2>11-13 лет</h2>
     <p><strong>Бег на 60 метров (секунды):</strong> Нормальное время для бега на 60 метров в этой возрастной группе: 11-12 лет: около 9-11 секунд. 13 лет: около 8-10 секунд.</p>
@@ -31,7 +49,10 @@
     <p><strong>Челнок (6*10 метров):</strong> Тест на координацию и скорость. Хорошим показателем может быть выполнение теста за приемлемое время.</p>
     <p><strong>Тест Купера (6 минут):</strong> В этом тесте ребенку нужно пробежать как можно больше расстояния за 6 минут. Хорошим результатом может быть пробег более 1000 метров.</p>
 </section>
+</section>
 
+<section class="age-group-info 13-15" style="display: none;">
+    <h2>13-15 лет</h2>
 <section class="age-group">
     <h2>13-15 лет</h2>
     <p><strong>Бег на 60 метров (секунды):</strong> Хорошим результатом будет бег на 60 метров за: 13 лет: менее чем 9-10 секунд. 14 лет: менее чем 8-9 секунд. 15 лет: менее чем 8 секунд.</p>
@@ -40,31 +61,25 @@
     <p><strong>Челнок (610 метров):</strong> Хорошим результатом для этого упражнения будет выполнение дистанции в 610 метров с хорошей техникой и скоростью.</p>
     <p><strong>Тест Купера (6 минут):</strong> Хорошим результатом для теста Купера будет пройти более чем 1,5-2 км за 6 минут.</p>
 </section>
+</section>
 
-<div class="age-selection">
-    <h3>Выберите возрастную категорию вашего ребенка:</h3>
-    <select id="ageCategory">
-        <option value="">-- Возраст --</option>
-        <option value="4-7">4-7 лет</option>
-        <option value="8-10">8-10 лет</option>
-        <option value="11-13">11-13 лет</option>
-        <option value="13-15">13-15 лет</option>
-    </select>
-</div>
-        <script>
+
+<script>
     document.getElementById('ageCategory').addEventListener('change', function() {
-        var ageGroup = this.value;
-        var sections = document.querySelectorAll('.age-group');
-        sections.forEach(function(section) {
-            if(section.classList.contains(ageGroup)) {
-                section.style.display = 'block';
-            } else {
-                section.style.display = 'none';
-            }
+        // Скрываем все секции
+        var allSections = document.querySelectorAll('.age-group-info');
+        allSections.forEach(function(section) {
+            section.style.display = 'none';
         });
+
+        // Отображаем выбранную секцию
+        var selectedAgeGroup = this.value;
+        var selectedSection = document.querySelector('.' + selectedAgeGroup);
+        if (selectedSection) {
+            selectedSection.style.display = 'block';
+        }
     });
 </script>
-
-    </div>
+</div>
 </body>
 </html>
