@@ -27,20 +27,6 @@
     <!-- Добавьте другие буквы алфавита -->
 </select>
 
-var namesData = {
-    "category1": {
-        "A": ["Алимжанов Гайболат", "Анарбай Батырхан", "Ахметова Каусар"],
-        "Б": ["Бактыгельды Акжан", "Бакыт Кайсар"],
-        // и т.д.
-    },
-    "category2": {
-        "A": ["Алексей", "Антон"],
-        "B": ["Богдан"],
-        // и т.д.
-    }
-    // и т.д. для других категорий
-};
-  
 <!-- Блок для отображения контента -->
 <div id="content"></div>
   <script>
@@ -71,36 +57,5 @@ document.getElementById('alphabetDropdown').addEventListener('change', function(
 });
 </script>
   
-  <table>
-    <tr>
-        <p>Тестирование 4-7 лет</p>
-        <th>Имя Ученика</th>
-        <th>Дата рождения</th>
-        <th>Бег 30 метров, сек</th>
-        <th>Прыжок в длину, см</th>
-        <th>Планка сек.</th>
-    </tr>
-    <tr>
-        <td>Алимжанов Гайболат</td>
-        <td>07/06/18</td>
-        <td>10.41</td>
-        <td>77</td>
-        <td>30</td>
-    </tr>
-    <tr>
-        <!-- Дополнительные строки для других учеников -->
-    </tr>
-    <style>
-    table {
-        width: 100%;
-        border-collapse: collapse;
-    }
-    th, td {
-        border: 1px solid black;
-        padding: 8px;
-        text-align: left;
-    }
-</style>
-</table>
 </body>
 </html>
